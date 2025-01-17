@@ -1,8 +1,4 @@
-"""
-Hough Circle Transform- voting based on edge points of a circle to check for possible circles passing through it
-Half Circle Transform- adjusted voting based on arcs and can detect circle when only a part of it is visible too
 
-"""
 
 import cv2 as cv
 import numpy as np

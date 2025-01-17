@@ -4,7 +4,7 @@ import cv2 as cv
 import numpy as np
 
 path = "/Users/ishitachoudhary/Desktop/Student Projects/Rugved/opencv_task/Ball_Tracking.mp4"
-capture = cv.VideoCapture(path)
+capture = cv.VideoCapture(path) //open and manage video files
 
 low_thresh = np.array([40, 40, 40])  
 up_thresh= np.array([70, 255, 255])
@@ -19,6 +19,8 @@ while True:
         print('frame is none')
 
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+    #independent hues directly dependent on colour only thus easily separable.
+    #saturation(intensity of colour) and value(brightness), hence more robust to lighting changes like shadows.
     mask = cv.inRange(hsv, low_thresh, up_thresh)
     cv.imshow("Mask", mask)
 
